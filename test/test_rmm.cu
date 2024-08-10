@@ -2,5 +2,5 @@
 
 int main()
 {
-    rmm:device_uvector<int> e;
+    rmm::device_uvector<int> e;
 }
