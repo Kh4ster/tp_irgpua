@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../src/cuda_tools/host_shared_ptr.cuh"
+#include "test_helpers.hh"
 #include <benchmark/benchmark.h>
 #include <numeric>
 
@@ -9,10 +11,8 @@ class Fixture
     static bool no_check;
 
     template <typename FUNC, typename... Args>
-    void bench_scan(benchmark::State& st,
-                      FUNC callback,
-                      int size,
-                      Args&&... args)
+    void
+    bench_scan(benchmark::State& st, FUNC callback, int size, Args&&... args)
     {
         constexpr int val = 1;
         cuda_tools::host_shared_ptr<int> buffer(size);
@@ -38,7 +38,7 @@ class Fixture
     }
 
     template <typename FUNC>
-    void register_scan(benchmark::State &st, FUNC func)
+    void register_scan(benchmark::State& st, FUNC func)
     {
         int size = st.range(0);
         this->bench_scan(st, func, size);

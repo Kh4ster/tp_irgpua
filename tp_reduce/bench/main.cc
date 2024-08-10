@@ -40,6 +40,10 @@ int main(int argc, char** argv)
     Fixture fx;
     {
         // Add the sizes to benchmark here
+        // Start with 1 block of 64 (block reduce)
+        // Then 2 blocks of 64 each (grid reduce)
+        // Then and odd size
+        // Finally the true sizes
         // TODO
         constexpr std::array sizes = {
             64

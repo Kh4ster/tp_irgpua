@@ -1,3 +1,9 @@
+# -- Can be removed if not on OpenStack --
+#find_program(GCC_PATH gcc)
+#set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --allow-unsupported-compiler")
+#add_compile_options("-Wno-error" "-Wno-pedantic" "-Wno-old-style-cast")
+#set(CMAKE_CUDA_HOST_COMPILER ${GCC_PATH})
+# -- /Can be removed if not on OpenStack --
 project(template)
 cmake_minimum_required(VERSION 3.18)
 
@@ -18,11 +24,11 @@ FetchContent_MakeAvailable(
         googletest
         googlebenchmark)
 # -- Can be removed if not on OpenStack --
-target_compile_options(benchmark PRIVATE "-Wno-pedantic")
-target_compile_options(benchmark PRIVATE "-Wno-error")
-target_compile_options(benchmark PRIVATE "-Wno-old-style-cast")
-target_compile_options(gtest PRIVATE "-Wno-error" "-Wno-pedantic" "-Wno-old-style-cast")
-target_compile_options(gtest_main PRIVATE "-Wno-error" "-Wno-pedantic" "-Wno-old-style-cast")
+#target_compile_options(benchmark PRIVATE "-Wno-pedantic")
+#target_compile_options(benchmark PRIVATE "-Wno-error")
+#target_compile_options(benchmark PRIVATE "-Wno-old-style-cast")
+#target_compile_options(gtest PRIVATE "-Wno-error" "-Wno-pedantic" "-Wno-old-style-cast")
+#target_compile_options(gtest_main PRIVATE "-Wno-error" "-Wno-pedantic" "-Wno-old-style-cast")
 # -- /Can be removed if not on OpenStack --
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED TRUE)
