@@ -28,7 +28,7 @@ void baseline_reduce(cuda_tools::host_shared_ptr<int> buffer,
 
     cudaDeviceSynchronize();
     kernel_check_error();
-    
+
     cudaProfilerStop();
 }
 
@@ -52,6 +52,6 @@ void your_reduce(cuda_tools::host_shared_ptr<int> buffer,
 
     cudaDeviceSynchronize();
     kernel_check_error();
-    
+
     cudaProfilerStop();
 }
