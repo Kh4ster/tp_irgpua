@@ -14,7 +14,7 @@ void kernel_reduce_baseline(raft::device_span<const T> buffer, raft::device_span
 {
     const int id = threadIdx.x + blockIdx.x * blockDim.x;
     if (id < buffer.size())
-        atomicAdd(&total[0], buffer[id]);
+        atomicAdd(total.data(), buffer[id]);
 }
 
 void baseline_reduce(rmm::device_uvector<int>& buffer,
