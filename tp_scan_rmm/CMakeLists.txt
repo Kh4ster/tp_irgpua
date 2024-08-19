@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(MyCudaProject LANGUAGES CXX CUDA)
+project(tp_scan LANGUAGES CXX CUDA)
 
 # Find the RMM library
 find_package(rmm REQUIRED)
