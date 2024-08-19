@@ -45,16 +45,20 @@ You can now open the *.ncu-rep file using Nsight Compute and analyze the results
 
 ### Additional infos
 
-* By default the program **will run in release** when it's inside a `build` or `build_release` folder. To build in **debug**, build the project inside a `build_debug` folder.
+* By default the program **will run in release**. To build in **debug**, do:
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+```
 
 * You can specify the "--no-check" option when running the bench binary to disable result checking :
 ```bash
-./bin/bench --no-check
+./bench --no-check
 ```
 
 * You can specify the "--bench-nsight" option when running the bench binary to forbid Google Benchmark from running the functions multiple times (Nsight will do this job) :
 ```bash
-./bin/bench --bench-nsight
+./bench --bench-nsight
 ```
 
 ## To add and benchmark your reduce
