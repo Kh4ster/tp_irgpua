@@ -1,0 +1,4 @@
+0. Compact to remove -1
+1. Apply map to fix broken pixels (+= 1; -= 5; += 3; -= 8) inverse (-= 1; += 5; -= 3; += 8)
+2. Apply histogram equalization
+3. Reduce pixel sum
