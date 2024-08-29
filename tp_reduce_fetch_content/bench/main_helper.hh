@@ -20,7 +20,7 @@ auto make_async()
 auto make_pool()
 {
     // Allocate 2 Go
-    size_t initial_pool_size = std::pow(2, 31);
+    size_t initial_pool_size = std::pow(2, 26);
     return rmm::mr::make_owning_wrapper<rmm::mr::pool_memory_resource>(
         make_async(),
         initial_pool_size);
