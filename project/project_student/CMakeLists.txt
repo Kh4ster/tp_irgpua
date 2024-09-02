@@ -1,11 +1,19 @@
-cmake_minimum_required(VERSION 3.25)
-project(IRGPUA LANGUAGES CXX CUDA)
+cmake_minimum_required(VERSION 3.26.4 FATAL_ERROR)
+project(project_irgpua LANGUAGES CXX CUDA)
 
-find_package(OpenMP REQUIRED)
-find_package(rmm REQUIRED)
-find_package(raft REQUIRED)
-find_package(benchmark REQUIRED)
+set(RAFT_NVTX ON)
+include(fetch_rapids.cmake)
+include(rapids-cmake)
+include(rapids-cpm)
+include(rapids-cuda)
+include(rapids-find)
 
+rapids_cuda_init_architectures(tp_reduce)
+
+rapids_cpm_init()
+include(cmake/thirdparty/get_cccl.cmake)
+include(cmake/thirdparty/get_rmm.cmake)
+include(cmake/thirdparty/get_raft.cmake)
 
 # Set the CUDA standard
 set(CMAKE_CUDA_STANDARD 17)
