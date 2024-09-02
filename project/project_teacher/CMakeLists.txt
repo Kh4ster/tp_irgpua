@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
 project(MyCudaProject LANGUAGES CXX CUDA)
 
-# Find the RMM library
 find_package(rmm REQUIRED)
 find_package(raft REQUIRED)
 find_package(benchmark REQUIRED)
