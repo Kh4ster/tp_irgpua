@@ -15,6 +15,8 @@ include(cmake/thirdparty/get_cccl.cmake)
 include(cmake/thirdparty/get_rmm.cmake)
 include(cmake/thirdparty/get_raft.cmake)
 
+find_package(OpenMP REQUIRED)
+
 # Set the CUDA standard
 set(CMAKE_CUDA_STANDARD 17)
 set(CXX_STANDARD 17)
