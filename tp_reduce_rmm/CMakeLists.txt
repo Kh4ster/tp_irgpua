@@ -17,7 +17,7 @@ target_link_libraries(to_bench PUBLIC rmm::rmm raft::raft)
 
 add_library(test_helpers
   bench/test_helpers.cu)
-target_link_libraries(test_helpers PUBLIC rmm::rmm benchmark::benchmark)
+target_link_libraries(test_helpers PUBLIC rmm::rmm raft::raft benchmark::benchmark)
 
 include_directories(src)
 
