@@ -41,18 +41,6 @@ ncu -o scan_nsight -f --set full ./bench --bench-nsight
 
 You can now open the *.ncu-rep file using Nsight Compute and analyze the results.
 
-- On the OpenStack server, to run Nsight-Compute you should use the following :
-
-To run Nsight Compute to generate a report :
-```bash
-$(NIXPKGS_ALLOW_UNFREE=1 nix eval --impure --raw nixpkgs#cudaPackages.nsight_compute)/nsight-compute/2022.1.1/ncu
-```
-
-To run the UI of Nsight Compute :
-```bash
-$(NIXPKGS_ALLOW_UNFREE=1 nix eval --impure --raw nixpkgs#cudaPackages.nsight_compute)/nsight-compute/2022.1.1/ncu-ui
-```
-
 ### Additional infos
 
 * By default the program **will run in release**. To build in **debug**, do:
