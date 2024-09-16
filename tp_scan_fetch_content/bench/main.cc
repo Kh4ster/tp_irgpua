@@ -30,7 +30,7 @@ int main(int argc, char** argv)
         // TODO
         constexpr std::array sizes = {
             64
-            // 65,
+            // 63,
             // 128,
             // 524288,
             // 1048576
