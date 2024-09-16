@@ -23,8 +23,8 @@ int main(int argc, char** argv)
     Fixture fx;
     {
         // Add the sizes to benchmark here
-        // Start with 1 block of 63 (block scan)
-        // Then odd size
+        // Start with 1 block of 64 (block scan)
+        // Then odd size (63)
         // Then 2 blocks of 64 each (grid scan)
         // Finally the true sizes
         // TODO
