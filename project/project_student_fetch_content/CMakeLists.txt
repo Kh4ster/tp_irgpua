@@ -21,7 +21,7 @@ find_package(OpenMP REQUIRED)
 set(CMAKE_CUDA_STANDARD 17)
 set(CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconcepts")
-set(CUDA_ARCHITECTURES "75")
+set(CMAKE_CUDA_ARCHITECTURES  "75")
 
 include_directories(src)
 
