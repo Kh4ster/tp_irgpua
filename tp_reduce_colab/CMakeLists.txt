@@ -9,7 +9,7 @@ find_package(benchmark REQUIRED)
 set(CMAKE_CUDA_STANDARD 17)
 set(CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconcepts")
-set(CUDA_ARCHITECTURES "75")
+set(CMAKE_CUDA_ARCHITECTURES  "75")
 
 add_library(to_bench
   src/to_bench.cu)

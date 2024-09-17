@@ -9,7 +9,7 @@ find_package(benchmark REQUIRED)
 set(CMAKE_CUDA_STANDARD 17)
 set(CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconcepts")
-set(CUDA_ARCHITECTURES "75")
+set(CMAKE_CUDA_ARCHITECTURES  "75")
 
 include_directories(src)
 
@@ -20,7 +20,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED TRUE)
-set(CMAKE_CUDA_ARCHITECTURES 70)
+set(CMAKE_CMAKE_CUDA_ARCHITECTURES  70)
 set(CMAKE_CUDA_SEPARABLE_COMPILATION ON)
 set(CMAKE_CUDA_FLAGS "--extended-lambda --generate-line-info --expt-relaxed-constexpr ${CMAKE_CUDA_FLAGS}")
 #set(CMAKE_CUDA_FLAGS "--expt-relaxed-constexpr --ptxas-options=-v --generate-line-info")
