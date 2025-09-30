@@ -69,3 +69,8 @@ In `bench/main.cc`:
 
 In `src/to_bench.cu(h)`:
 * Add your functions to benchmark
+
+## Known issues
+
+Having a local version of rmm or rapids in your current conda env can create build time issue.
+Prefer just having the CUDA Toolkit and letting CPM pull the other depedencies 
