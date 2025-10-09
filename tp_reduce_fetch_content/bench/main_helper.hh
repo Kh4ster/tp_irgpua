@@ -13,17 +13,13 @@ constexpr auto tuple_length(Tuple)
     return std::tuple_size_v<Tuple>;
 }
 
-auto make_async()
+inline auto make_async() { return std::make_shared<rmm::mr::cuda_async_memory_resource>(); }
+inline auto make_pool()
 {
-    return std::make_shared<rmm::mr::cuda_async_memory_resource>();
-}
-auto make_pool()
-{
-    // Allocate 0.05 Go
-    size_t initial_pool_size = std::pow(2, 26);
-    return rmm::mr::make_owning_wrapper<rmm::mr::pool_memory_resource>(
-        make_async(),
-        initial_pool_size);
+  // 128MB of initial pool size
+  const size_t initial_pool_size = 128 * 1024 * 1024;
+  return rmm::mr::make_owning_wrapper<rmm::mr::pool_memory_resource>(make_async(),
+                                                                     initial_pool_size);
 }
 
 bool parse_arguments(int argc, char* argv[])
