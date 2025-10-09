@@ -42,8 +42,10 @@ target_link_libraries(to_bench PUBLIC rmm::rmm raft::raft)
 add_library(test_helpers
   bench/test_helpers.cu)
 target_link_libraries(test_helpers PUBLIC rmm::rmm raft::raft benchmark::benchmark)
+set_target_properties(test_helpers PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 include_directories(src)
 
 add_executable(bench bench/main.cc)
 target_link_libraries(bench to_bench test_helpers benchmark::benchmark)
+set_target_properties(bench PROPERTIES POSITION_INDEPENDENT_CODE ON)
