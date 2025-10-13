@@ -32,14 +32,19 @@ CPMAddPackage(NAME rmm
 
 # Set the CUDA standard
 set(CMAKE_CUDA_STANDARD 17)
+# Set the C++ standard
 set(CXX_STANDARD 17)
+# Add fconcept for lambdas
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconcepts")
+# Generate cubin for this specific GPU
 set(CMAKE_CUDA_ARCHITECTURES "native")
+# Set fpic for Google Benchmark
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 
 add_library(to_bench
   src/to_bench.cu)
-target_link_libraries(to_bench PUBLIC rmm::rmm CCCL::CCCL)
+target_link_libraries(to_bench PUBLIC rmm::rmm CCCL::CCCL benchmark::benchmark)
 
 add_library(test_helpers
   bench/test_helpers.cu)
