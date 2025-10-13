@@ -40,11 +40,11 @@ set(CMAKE_CUDA_ARCHITECTURES "native")
 # Set fpic for Google Benchmark
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-add_library(to_bench
+add_library(to_bench STATIC
   src/to_bench.cu)
 target_link_libraries(to_bench PUBLIC rmm::rmm raft::raft benchmark::benchmark)
 
-add_library(test_helpers
+add_library(test_helpers STATIC
   bench/test_helpers.cu)
 target_link_libraries(test_helpers PUBLIC rmm::rmm raft::raft benchmark::benchmark)
 
