@@ -23,11 +23,12 @@ class Fixture
         {
             st.PauseTiming();
             buffer.device_fill(val);
+            cudaStreamSynchronize();
             st.ResumeTiming();
             callback(buffer);
         }
 
-        st.SetBytesProcessed(int64_t(st.iterations()) *
+        st.SetBytesProcessed(2*int64_t(st.iterations()) *
                              int64_t(size * sizeof(int)));
 
         cuda_tools::host_shared_ptr<int> expected(size);
