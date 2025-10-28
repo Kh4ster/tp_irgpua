@@ -25,11 +25,12 @@ class Fixture
         {
             st.PauseTiming();
             fill_buffer(buffer, val);
+            cudaStreamSynchronize(buffer.stream());
             st.ResumeTiming();
             callback(buffer);
         }
 
-        st.SetBytesProcessed(int64_t(st.iterations()) *
+        st.SetBytesProcessed(2*int64_t(st.iterations()) *
                              int64_t(size * sizeof(int)));
 
         std::vector<int> expected(size);
