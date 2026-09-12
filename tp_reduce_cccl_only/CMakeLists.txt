@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.26.4 FATAL_ERROR)
 project(tp_reduce LANGUAGES CXX CUDA)
 
+find_package(CUDAToolkit REQUIRED)
+
 include(FetchContent)
 
 FetchContent_Declare(googletest
@@ -48,4 +50,9 @@ target_link_libraries(test_helpers PUBLIC benchmark::benchmark PRIVATE CCCL::CCC
 include_directories(src)
 
 add_executable(bench bench/main.cc)
-target_link_libraries(bench to_bench test_helpers benchmark::benchmark CCCL::CCCL)
+target_link_libraries(bench
+    PRIVATE CUDA::cudart
+    to_bench
+    test_helpers
+    benchmark::benchmark
+    CCCL::CCCL)
