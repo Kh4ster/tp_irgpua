@@ -89,13 +89,13 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     // TODO : Test here that you have the same results
     // You can compare visually and should compare image vectors values and "total" values
     // If you did the sorting, check that the ids are in the same order
-    for (int i = 0; i < nb_images; ++i)
+    for (const auto& id_sorted : to_sort)
     {
-        std::cout << "Image #" << images[i].to_sort.id << " total : " << images[i].to_sort.total << std::endl;
+        std::cout << "Image #" << images[id_sorted.id].to_sort.id << " total : " << images[id_sorted.id].to_sort.total << std::endl;
         std::ostringstream oss;
-        oss << "Image#" << images[i].to_sort.id << ".pgm";
+        oss << "Image#" << images[id_sorted.id].to_sort.id << ".pgm";
         std::string str = oss.str();
-        images[i].write(str);
+        images[id_sorted.id].write(str);
     }
 
     std::cout << "Done, the internet is safe now :)" << std::endl;
