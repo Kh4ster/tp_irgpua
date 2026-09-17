@@ -41,6 +41,18 @@ void your_reduce(cuda::device_buffer<int>& buffer,
     // When treating the 2 thread block case you need to create a temporary array
     // To do so use the following API : cuda::device_buffer<int> tmp(<SIZE>, buffer.stream())
 
+cuda::device_buffer<int> tmp(
+    buffer.stream(),
+    buffer.memory_resource(),
+    1,
+    cuda::no_init
+);
+
+cuda::device_buffer<int> tmp2(
+    buffer.stream(),
+    buffer.memory_resource(),
+    1);
+
     // Help: very large case
     // Using only 2 kernels, what is the biggest buffer size we can handle?
 
