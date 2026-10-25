@@ -76,7 +76,7 @@ If you are crazy :
 
 Path for the images has been hardcoded for you and should be working on the OpenStack.
 
-If you still want to download the "images" folder : https://cloud.lrde.epita.fr/s/XYPimokPGSQrM35
+If you still want to download the "images" folder : check discord or email me directly.
 (Feel free to then change the "images" path in main.cu if you have your downloaded the folder)
 
 The project layout is simple :
