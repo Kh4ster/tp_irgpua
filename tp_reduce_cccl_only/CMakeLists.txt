@@ -34,6 +34,7 @@ set(CMAKE_CUDA_STANDARD 17)
 set(CXX_STANDARD 17)
 # Add fconcept for lambdas
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconcepts")
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --generate-line-info")
 # Generate cubin for this specific GPU
 set(CMAKE_CUDA_ARCHITECTURES "native")
 # Set fpic for Google Benchmark
